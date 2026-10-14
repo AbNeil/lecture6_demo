@@ -29,7 +29,7 @@ CSV files ──► read each file with ITS OWN header ──► check every row
 | `run_queries.sh`, `queries.sql` | ELT load into BigQuery and the SQL queries, including a reconciliation |
 | `cleanup.sh` | Stops jobs and deletes everything you created |
 
-## Part A: run it locally (about 5 minutes, free)
+## Part A: run it locally
 
 Open Google Cloud Shell (the `>_` button at the top right of the console) or any terminal with Python 3.
 
