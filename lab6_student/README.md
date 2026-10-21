@@ -7,10 +7,10 @@ Last week you learned why pipelines matter and watched one being built. Today **
 > [!NOTE]
 > **You will not be left alone with this.** Every step has the exact command to copy, what you should see, a checkpoint so you know you are on track, and hints when you are stuck. Hints come in three levels: try Hint 1, then 2, then 3. If you are stuck for more than two minutes, ask.
 
-## The plan (about 115 minutes, with a little time to spare)
+## To do 
 
-| Part | What you do | Time
-|---|---|---|
+| Part | What you do | 
+|---|---|
 | [0](#part-0-prepare) | Create your project, open Cloud Shell, install the kit, see the tests fail
 | [1](#part-1-run-it-locally-and-read-the-counters) | Run the pipeline locally and read its counters
 | [2](#part-2-make-two-changes-25-min) | Make two changes to the pipeline: **TODO 1** and **TODO 2**
