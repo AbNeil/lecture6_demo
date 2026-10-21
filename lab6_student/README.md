@@ -9,15 +9,15 @@ Last week you learned why pipelines matter and watched one being built. Today **
 
 ## The plan (about 115 minutes, with a little time to spare)
 
-| Part | What you do | Minutes |
+| Part | What you do | 
 |---|---|---|
-| [0](#part-0-prepare-15-min) | Create your project, open Cloud Shell, install the kit, see the tests fail | 15 |
-| [1](#part-1-run-it-locally-and-read-the-counters-10-min) | Run the pipeline locally and read its counters | 10 |
-| [2](#part-2-make-two-changes-25-min) | Make two changes to the pipeline: **TODO 1** and **TODO 2** | 25 |
-| [3](#part-3-the-third-change-and-the-green-light-5-min) | **TODO 3** and a fully green test run | 5 |
-| [4](#part-4-run-it-on-google-cloud-25-min) | Set up Google Cloud, look at the real data, run on Dataflow | 25 |
-| [5](#part-5-ask-questions-of-the-real-data-25-min) | Query the result in BigQuery and look for thin days in June 2024 | 25 |
-| [6](#part-6-cost-and-clean-up-10-min) | Check what it cost and clean up | 10 |
+| [0](#part-0-prepare) | Create your project, open Cloud Shell, install the kit, see the tests fail
+| [1](#part-1-run-it-locally-and-read-the-counters) | Run the pipeline locally and read its counters
+| [2](#part-2-make-two-changes-25-min) | Make two changes to the pipeline: **TODO 1** and **TODO 2**
+| [3](#part-3-the-third-change-and-the-green-light) | **TODO 3** and a fully green test run 
+| [4](#part-4-run-it-on-google-cloud) | Set up Google Cloud, look at the real data, run on Dataflow
+| [5](#part-5-ask-questions-of-the-real-data) | Query the result in BigQuery and look for thin days in June 2024 
+| [6](#part-6-cost-and-clean-up) | Check what it cost and clean up
 
 ## Your credits: the cost promise
 
