@@ -619,7 +619,7 @@ It cancels any Dataflow job that is still running, then deletes the bucket and t
 
 ## When done 
 
-Before you leave, check:
+check:
 
 - [ ] `9 passed` in your last test run
 - [ ] Your Dataflow job showed **succeeded**
