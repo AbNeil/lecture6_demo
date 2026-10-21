@@ -617,7 +617,7 @@ It cancels any Dataflow job that is still running, then deletes the bucket and t
 
 ---
 
-## You are done
+## When done 
 
 Before you leave, check:
 
