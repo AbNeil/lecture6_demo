@@ -9,7 +9,7 @@ Last week you learned why pipelines matter and watched one being built. Today **
 
 ## The plan (about 115 minutes, with a little time to spare)
 
-| Part | What you do | 
+| Part | What you do | Time
 |---|---|---|
 | [0](#part-0-prepare) | Create your project, open Cloud Shell, install the kit, see the tests fail
 | [1](#part-1-run-it-locally-and-read-the-counters) | Run the pipeline locally and read its counters
