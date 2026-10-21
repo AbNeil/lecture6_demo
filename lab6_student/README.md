@@ -11,7 +11,7 @@ Last week you learned why pipelines matter and watched one being built. Today **
 
 | Part | What you do | 
 |---|---|
-| [0](#part-0-prepare) | Create your project, open Cloud Shell, install the kit, see the tests fail
+| [0](#part-0-prepare_10) | Create your project, open Cloud Shell, install the kit, see the tests fail
 | [1](#part-1-run-it-locally-and-read-the-counters) | Run the pipeline locally and read its counters
 | [2](#part-2-make-two-changes-25-min) | Make two changes to the pipeline: **TODO 1** and **TODO 2**
 | [3](#part-3-the-third-change-and-the-green-light) | **TODO 3** and a fully green test run 
@@ -43,7 +43,7 @@ Do not remove the worker limit, do not start any streaming job, and do not skip 
 
 ---
 
-## Part 0: Prepare (15 min)
+## Part 0: Prepare 
 
 ### 0.1 Create a Google Cloud project
 
@@ -140,7 +140,7 @@ python -m pytest -q test_pipeline.py
 
 ---
 
-## Part 1: Run it locally and read the counters (10 min)
+## Part 1: Run it locally and read the counters
 
 Before changing anything, run the pipeline as it is, **on your own machine, with no cloud services** (this is free). It uses a small, made-up sample with a few deliberately bad rows.
 
@@ -207,7 +207,7 @@ Each file begins with a header line holding the column names. That line is not a
 
 ---
 
-## Part 2: Make two changes (25 min)
+## Part 2: Make two changes 
 
 Now open **`bike_pipeline.py`** in the editor. Search for `TODO`: you will find comments marking exactly where to work. **Nothing else needs changing.**
 
@@ -348,7 +348,7 @@ Run the tests again. **You should see** `test_todo2_...` turn green.
 
 ---
 
-## Part 3: The third change and the green light (5 min)
+## Part 3: The third change and the green light 
 
 ### TODO 3: tell BigQuery about the new column
 
@@ -401,11 +401,11 @@ head -n 2 out/half-0*.jsonl
 
 ---
 
-## Part 4: Run it on Google Cloud (25 min)
+## Part 4: Run it on Google Cloud 
 
 Now the same pipeline you just tested runs on **Dataflow**, reading real files from Cloud Storage and writing to BigQuery. You run four scripts, in order.
 
-### 4.1 Set up your project (about 3 minutes)
+### 4.1 Set up your project 
 
 ```bash
 ./setup_gcp.sh YOUR_PROJECT_ID
@@ -499,7 +499,7 @@ Click the job, open its **Logs**, and read the **first** error message (not the 
 
 ---
 
-## Part 5: Ask questions of the real data (25 min)
+## Part 5: Ask questions of the real data 
 
 ### 5.1 The ELT path and the reconciliation
 
@@ -586,7 +586,7 @@ BigQuery wants a time zone name written like `Continent/City`. What would you wr
 
 ---
 
-## Part 6: Cost and clean-up (10 min)
+## Part 6: Cost and clean-up 
 
 ### 6.1 Complete your cost log
 
