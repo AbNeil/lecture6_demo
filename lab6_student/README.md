@@ -632,10 +632,6 @@ Before you leave, check:
 
 ---
 
-## If you are running out of time
-
-Parts 0 to 3 are the heart of the lab. If you are behind at the cloud steps, tell your lecturer: you can watch a demonstration of Parts 4 to 6 and still understand everything. Never skip **cleanup**.
-
 ## Quick reference
 
 | File | What it is |
