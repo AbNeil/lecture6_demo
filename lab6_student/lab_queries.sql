@@ -9,13 +9,13 @@ GROUP BY day
 ORDER BY day;
 
 -- ## 2. Which stations are most often EMPTY? (uses the empty_readings column YOU added)
-SELECT station_name,
+SELECT COALESCE(station_name, CONCAT('station ', CAST(station_id AS STRING))) AS station,
        SUM(___) AS empty_readings,                 -- blank 1: the column you added
        SUM(samples) AS readings,
        ROUND(100 * SAFE_DIVIDE(SUM(___), SUM(samples)), 1) AS pct_of_readings_empty   -- blank 2: same column
 FROM `YOUR_PROJECT.bikes.station_hourly`
 WHERE hour_start >= TIMESTAMP '2024-06-01' AND hour_start < TIMESTAMP '2024-07-01'
-GROUP BY station_name
+GROUP BY station_id, station
 ORDER BY pct_of_readings_empty DESC
 LIMIT 10;
 

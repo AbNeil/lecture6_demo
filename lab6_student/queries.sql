@@ -15,12 +15,12 @@ GROUP BY source, reason
 ORDER BY bad_rows DESC;
 
 -- ## 3. Which stations are most often empty? (June 2024)
-SELECT station_name,
+SELECT COALESCE(station_name, CONCAT('station ', CAST(station_id AS STRING))) AS station,
        ROUND(AVG(avg_bikes), 1) AS typical_bikes,
        ROUND(100 * SAFE_DIVIDE(COUNTIF(min_bikes = 0), COUNT(*)), 1) AS pct_hours_that_hit_zero
 FROM `YOUR_PROJECT.bikes.station_hourly`
 WHERE hour_start >= TIMESTAMP '2024-06-01' AND hour_start < TIMESTAMP '2024-07-01'
-GROUP BY station_name
+GROUP BY station_id, station
 ORDER BY pct_hours_that_hit_zero DESC
 LIMIT 10;
 

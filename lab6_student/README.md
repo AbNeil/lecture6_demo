@@ -561,6 +561,8 @@ This uses **the column you added**. Fill in blanks 1 and 2 in `lab_queries.sql` 
 <details><summary>Hint</summary>
 
 Both blanks are the name of the column you added in TODO 1. The query adds it up per station and divides by the total number of readings.
+
+If a row is labelled `station 35` (or 1, 14, 20, 60 or 70), that station's ID is not in the station list the pipeline joined, so it has no name. The pipeline kept those rows on purpose and counted them, rather than dropping them.
 </details>
 
 > **Think about it (12):** which station is empty most often? Does that surprise you? What might explain why one station is empty more often than another?
