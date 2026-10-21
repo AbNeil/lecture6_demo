@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Run the pipeline LOCALLY on the two real files from get_data_local.sh (no Google Cloud).
-# On a laptop this takes a couple of minutes: the full-size files are about a million rows.
+# On a recent laptop this takes under a minute (23 seconds measured on a MacBook Pro); slower machines take longer.
 set -euo pipefail
 [ -d data/raw ] || { echo "No data yet. Run ./get_data_local.sh first."; exit 1; }
 rm -rf out/real

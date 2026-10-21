@@ -434,11 +434,11 @@ This downloads two real monthly files (June 2024 and February 2026) and the list
 
 **Look carefully at the output.** The rule of data engineering is: *look at the data before you run anything on it.*
 
-> **Think about it (6):** compare the header line (the first line) of the June 2024 file with the February 2026 file. Are the columns the same? Which columns are in one but not the other?
+> **Think about it (6):** the dataset's published data dictionary lists **15** columns for the June 2024 file but only **9** for February 2026. Compare the header line (the first line) of each file. What do you actually see?
 >
 > **Think about it (7):** what does the timestamp in the `last_reported` column look like? Does it include a time zone?
 >
-> **Think about it (8):** this is **schema drift**, from the lecture. Why is it a good thing that our pipeline reads each file's own header, and uses only three columns?
+> **Think about it (8):** what does this tell you about trusting a description of a dataset? And why is it still good design that our pipeline reads each file's own header and needs only three columns?
 
 <details><summary>If it fails</summary>
 

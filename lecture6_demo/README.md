@@ -76,7 +76,7 @@ Everything in Part A, but on the **two real files**. You need Python 3, an inter
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ./get_data_local.sh        # downloads 2 real files + the station list, and prints their first lines
-./run_local_real.sh        # runs the pipeline locally on the real files (a few minutes)
+./run_local_real.sh        # runs the pipeline locally on the real files (under a minute on a recent laptop)
 python reconcile_local.py  # do plain pandas and the pipeline agree?
 python rows_per_day.py     # rows per day in June 2024: which days are unusually thin?
 ```
@@ -88,7 +88,7 @@ What you should see:
 - `reconcile_local.py` prints `elt_rows`, `etl_rows` and `matching_rows`. If all three are equal, two different methods (plain pandas and the Beam pipeline) agree.
 - `rows_per_day.py` prints how many rows arrive each day, with a bar, and flags days well below the busiest days. On the real June 2024 file it counts 597,669 rows (not the 315,747 shown on the dataset's web page) and flags 5 and 6 June as thin. It shows **when** the volume changes, never **why**: that is a question for the data owner.
 
-Timing: on synthetic files of the same size as the real ones (about 946,000 rows), the local run took roughly 90 to 115 seconds on the authors' machine. Your machine may be faster or slower. The real files were not available to the authors, so the real counters are yours to discover.
+Timing: on the authors' MacBook Pro the run on the two real files took 23 seconds. A slower machine will take longer.
 
 If a download fails, open the dataset page, copy the file's link and run, for example: `JUN2024_URL="https://..." ./get_data_local.sh`.
 
@@ -123,4 +123,4 @@ Prerequisites: a Google Cloud project that you created, with your **course credi
 
 ## What was tested, and what was not
 
-Tested on the authors' machine with Apache Beam 2.77.0 on Python 3.12: the 5 unit tests, the full local run on the sample data (counters above), a full-size local run on synthetic files of about 946,000 rows with the Part C scripts (including the local reconciliation, which matched on every row), and that the BigQuery-writing version of the pipeline builds. **Not testable without a cloud project and so to be confirmed in your own dry run:** the Dataflow run itself (start-up time, cost, permissions), the real column names and timestamp format of the large files (see the header lines `get_data.sh` prints), and the BigQuery queries. The column lists in the lecture come from the dataset's published data dictionaries.
+Tested on the authors' machine with Apache Beam 2.77.0 on Python 3.12: the 5 unit tests; the full local run on the sample data (counters above); and the Part C scripts on the **real** June 2024 and February 2026 files on a MacBook Pro (23 seconds; 1,052,292 rows read and all valid; 143,431 hourly rows; the local reconciliation matched on every row; the published June 2024 row count and size on the dataset page did not match the file, which has 597,669 rows and is 74 MB). The BigQuery-writing version of the pipeline builds. **Not tested, so to be confirmed in your own dry run:** the Dataflow run itself (start-up time, cost, permissions) and the BigQuery queries. The real files have 15 columns each; the published data dictionary wrongly lists 9 for February 2026.
