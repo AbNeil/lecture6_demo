@@ -2,7 +2,7 @@
 
 **Data Handling and Infrastructure for AI | MSc | 2 hours | no homework**
 
-Last week you learned why pipelines matter and watched one being built. Today **you** will extend that pipeline, prove your changes work with automatic tests, run it on Google Cloud, and use the result to investigate real Dublin Bikes data, including a small mystery.
+Last week you learned why pipelines matter and watched one being built. Today **you** will extend that pipeline, prove your changes work with automatic tests, run it on Google Cloud, and use the result to investigate real Dublin Bikes data, including finding days when something looks wrong.
 
 > [!NOTE]
 > **You will not be left alone with this.** Every step has the exact command to copy, what you should see, a checkpoint so you know you are on track, and hints when you are stuck. Hints come in three levels: try Hint 1, then 2, then 3. If you are stuck for more than two minutes, ask.
@@ -16,7 +16,7 @@ Last week you learned why pipelines matter and watched one being built. Today **
 | [2](#part-2-make-two-changes-25-min) | Make two changes to the pipeline: **TODO 1** and **TODO 2** | 25 |
 | [3](#part-3-the-third-change-and-the-green-light-5-min) | **TODO 3** and a fully green test run | 5 |
 | [4](#part-4-run-it-on-google-cloud-25-min) | Set up Google Cloud, look at the real data, run on Dataflow | 25 |
-| [5](#part-5-ask-questions-of-the-real-data-25-min) | Query the result in BigQuery and solve the June 2024 mystery | 25 |
+| [5](#part-5-ask-questions-of-the-real-data-25-min) | Query the result in BigQuery and look for thin days in June 2024 | 25 |
 | [6](#part-6-cost-and-clean-up-10-min) | Check what it cost and clean up | 10 |
 
 ## Your credits: the cost promise
@@ -529,19 +529,25 @@ If two completely different methods (SQL and a Beam pipeline) give identical num
 
 Open `lab_queries.sql` in the editor. It has three queries. Two have **blanks** (`___`). Run each one with `./run_lab_sql.sh N`.
 
-#### Investigation 1: the mystery of June 2024
+#### Investigation 1: count the rows, then look for thin days
 
-In the lecture you saw that June 2024 has about **half** as many rows as neighbouring months. Query 1 counts rows **per day** in the raw June file. It needs no changes:
+The web page for the dataset publishes a "total record count" for each file. For June 2024 it says **315,747**. Do not just believe it: **count the rows yourself**. In Cloud Shell, `wc -l` counts the lines in a file, and one of them is the header:
+
+```bash
+wc -l data/dublin-bikes_station_status_062024.csv
+```
+
+Now run query 1, which counts the rows **per day** in the raw June file. It needs no changes:
 
 ```bash
 ./run_lab_sql.sh 1
 ```
 
-> **Think about it (11):** look at the number of rows per day. What pattern do you see? Is it one bad day, a gradual change, or something else? Write **one sentence** with your hypothesis. Then write the question you would ask Dublin City Council to find out whether you are right.
+> **Think about it (11):** (a) Does your own count agree with the page? (b) Look at the number of rows per day. What is a normal day, and do any days stand out? Write **one sentence** with your hypothesis about what you see, and the question you would ask Dublin City Council to find out whether you are right.
 
 <details><summary>Hint</summary>
 
-Scan down the numbers. Is there a day where the count suddenly drops, or stays low until the end of the month? Compare the numbers at the start with those at the end. The data tells you **when**, but it cannot tell you **why**: that is a question for the data owner.
+For (a): remember to subtract the header line from the `wc -l` figure. For (b): scan down the numbers for a typical level, then look for days that are clearly lower. Also notice whether the weekend days look different from weekdays. The data tells you **when** something changes, but it cannot tell you **why**: that is a question for the data owner.
 </details>
 
 #### Investigation 2: which stations are most often empty?

@@ -1,7 +1,7 @@
 -- Lab 6 queries. Replace YOUR_PROJECT with your project id (run_lab_sql.sh does it for you).
 -- Run one with:  ./run_lab_sql.sh 1      (or 2, or 3)
 
--- ## 1. THE MYSTERY OF JUNE 2024: how many rows arrive on each day?
+-- ## 1. THIN DAYS: how many rows arrive on each day of June 2024?
 SELECT DATE(SAFE_CAST(last_reported AS TIMESTAMP)) AS day,
        COUNT(*) AS rows_that_day
 FROM `YOUR_PROJECT.bikes.raw_2024_06`

@@ -78,7 +78,7 @@ pip install -r requirements.txt
 ./get_data_local.sh        # downloads 2 real files + the station list, and prints their first lines
 ./run_local_real.sh        # runs the pipeline locally on the real files (a few minutes)
 python reconcile_local.py  # do plain pandas and the pipeline agree?
-python rows_per_day.py     # rows per day in June 2024: where does the file go quiet?
+python rows_per_day.py     # rows per day in June 2024: which days are unusually thin?
 ```
 
 What you should see:
@@ -86,7 +86,7 @@ What you should see:
 - `get_data_local.sh` prints each file's **header line**: read it first. This is where you see the real columns and the timestamp format.
 - `run_local_real.sh` ends with the counters (`files_read 2`, then `rows_read = good_rows + bad_rows`), the time taken, a count of output rows, and a table of quarantined rows by reason and file.
 - `reconcile_local.py` prints `elt_rows`, `etl_rows` and `matching_rows`. If all three are equal, two different methods (plain pandas and the Beam pipeline) agree.
-- `rows_per_day.py` prints how many rows arrive each day, with a bar, and flags days well below the typical day. Use it on the June 2024 file to investigate why that month has about half the rows of its neighbours. It shows **when** the volume changes, never **why**: that is a question for the data owner.
+- `rows_per_day.py` prints how many rows arrive each day, with a bar, and flags days well below the busiest days. On the real June 2024 file it counts 597,669 rows (not the 315,747 shown on the dataset's web page) and flags 5 and 6 June as thin. It shows **when** the volume changes, never **why**: that is a question for the data owner.
 
 Timing: on synthetic files of the same size as the real ones (about 946,000 rows), the local run took roughly 90 to 115 seconds on the authors' machine. Your machine may be faster or slower. The real files were not available to the authors, so the real counters are yours to discover.
 
