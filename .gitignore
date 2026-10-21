@@ -1,0 +1,10 @@
+# local environments, outputs and downloaded data: never commit these
+.venv/
+__pycache__/
+.pytest_cache/
+out/
+data/
+sample/
+env.sh
+*.pyc
+.DS_Store
