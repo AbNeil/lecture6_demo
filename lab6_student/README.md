@@ -11,9 +11,9 @@ Last week you learned why pipelines matter and watched one being built. Today **
 
 | Part | What you do | 
 |---|---|
-| [0](#part-0-prepare_10) | Create your project, open Cloud Shell, install the kit, see the tests fail
+| [0](#part-0-prepare) | Create your project, open Cloud Shell, install the kit, see the tests fail
 | [1](#part-1-run-it-locally-and-read-the-counters) | Run the pipeline locally and read its counters
-| [2](#part-2-make-two-changes-25-min) | Make two changes to the pipeline: **TODO 1** and **TODO 2**
+| [2](#part-2-make-two-changes) | Make two changes to the pipeline: **TODO 1** and **TODO 2**
 | [3](#part-3-the-third-change-and-the-green-light) | **TODO 3** and a fully green test run 
 | [4](#part-4-run-it-on-google-cloud) | Set up Google Cloud, look at the real data, run on Dataflow
 | [5](#part-5-ask-questions-of-the-real-data) | Query the result in BigQuery and look for thin days in June 2024 
