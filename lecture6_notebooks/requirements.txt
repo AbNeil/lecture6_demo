@@ -1,0 +1,3 @@
+-r ../lecture6_demo/requirements.txt
+jupyterlab
+matplotlib

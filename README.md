@@ -7,6 +7,7 @@ This repository holds the code for Lecture 6 and its lab. The example throughout
 | Folder | What it is | Start here |
 |---|---|---|
 | [`lecture6_demo/`](lecture6_demo/) | The demo shown in the lecture: an Apache Beam pipeline, with tests and scripts. Runs **locally** (free, no cloud account) or on **Google Cloud Dataflow** | [`lecture6_demo/README.md`](lecture6_demo/README.md) |
+| [`lecture6_notebooks/`](lecture6_notebooks/) | A **guided notebook** that runs the demo, with two exercises. Runs in **Google Colab** (free, nothing to install) or on your own computer. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AbNeil/lecture6_demo/blob/main/lecture6_notebooks/Lecture6_Pipeline_Demo_student.ipynb) | [`lecture6_notebooks/README.md`](lecture6_notebooks/README.md) |
 | [`lab6_student/`](lab6_student/) | **Lab 6**: you extend the pipeline, prove it with tests, run it, and investigate the data | [`lab6_student/README.md`](lab6_student/README.md) (the lab sheet) |
 
 ## Get the code (once)
@@ -23,6 +24,8 @@ chmod +x *.sh
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
+
+**For the notebook:** in Colab, click the badge above and run the first cell. On your own computer, follow [`lecture6_notebooks/README.md`](lecture6_notebooks/README.md), section 4.
 
 **For Lab 6** (the lab sheet in `lab6_student/README.md` has every step in full):
 
